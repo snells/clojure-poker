@@ -20,19 +20,101 @@
        "\t"
        (let [v (:value c)]
          (cond
-           (<= v 10) v
-           (= v 11) "jack "
-           (= v 12) "queen"
-           (= v 13) "king "
-           (= v 14) "ace  "
-           true "Somethings fucked up"
-       )
-  )))
+          (<= v 10) v
+          (= v 11) "jack "
+          (= v 12) "queen"
+          (= v 13) "king "
+          (= v 14) "ace  "
+          true "This should never happen"
+          ))))
+
+
+(defn hand-values [hand]
+  (map (fn [card] (:value card)) hand))
+
+
+(defn hand-same-color [hand]
+  (let [first-suit (:suit (first hand))]
+    ;; turn hand into list of booleans of either black or red
+    (every? identity 
+            (if (or 
+                 (= 0 (compare first-suit 'spade))
+                 (= 0 (compare first-suit 'club)))
+              ;; black
+              (map (fn [card]
+                     (or
+                      (= 0 (compare (:suit card) 'spade))
+                      (= 0 (compare (:suit card) 'club))))
+                   hand)
+              ;; red
+              (map (fn [card]
+                     (or
+                      (= 0 (compare (:suit card) 'heart))
+                      (= 0 (compare (:suit card) 'diamond))))
+                   hand)))))
+
+
+
+(defn hand-straight [hand]
+  (let [values (sort (hand-values hand))
+        ;; funktion returns false if next card is not bigger by exacly 1
+        tmpfn (fn recfn [lst previous]
+                (if (empty? lst)
+                  true
+                  (if (= 1 (- (first lst) previous))
+                    (recfn (rest lst) (first lst))
+                    false)))
+        ]
+    (tmpfn (rest values) (first values))))
+
+
+(defn key->int [key]
+  (Integer. (str key)))
+
+
+(defn hand-equal-count [hand]
+  (let [tmp-vals  (hand-values hand)]
+    (let [
+          values (frequencies tmp-vals)
+          ;; values = { card-number : frequency, ... }
+          first-combo (apply max-key val values) ; highest frequency
+          fval (val first-combo)
+          fkey (key first-combo)
+          ;; second highest
+          rest-vals ( frequencies (remove (fn [value] (= (key->int (key first-combo)) value)) tmp-vals))
+          second-combo (apply max-key val rest-vals)
+          sval (val second-combo)
+          ]
+      (cond
+       (= fval 4)				['four fkey]
+       (and (= fval 3) (= sval 2))		['fullhouse fkey]
+       (= fval 3)				['three fkey]
+       (and (= fval 2) (= sval 2))		['doublepair fkey]
+       (= fval 2)				['pair fkey]
+       true					['high fkey]
+       ))))
 
 ;; hand list of cards
-(defn hand-value [hand]
-  0
-  )
+(defn hand-score [hand]
+  (let [same-color (hand-same-color hand)
+        straight (hand-straight hand)
+        [pair-type pair-high] (hand-equal-count hand)
+        high (apply max (hand-values hand))
+        ]
+    (cond
+     (and same-color straight) (if (= high 14) ; if ace => royal flush
+                                 ['royal-straightflush high high 10000]
+                                 ['straightflush high high (+ 9000 high)])
+     (= 0 (compare pair-type 'four)) 		[pair-type pair-high high (+ 8000 pair-high)]
+     straight					['straight high high (+ 8500 high)]
+     same-color					['flush high high (+ 7500 high)]
+     (= 0 (compare pair-type 'fullhouse))	[pair-type pair-high high (+ 7000 pair-high)] 
+     (= 0 (compare pair-type 'three))		[pair-type pair-high high (+ 6000 pair-high)] 
+     (= 0 (compare pair-type 'doublepair))	[pair-type pair-high high (+ 5000 pair-high)] 
+     (= 0 (compare pair-type 'pair))		[pair-type pair-high high (+ 4000 pair-high)]
+     (= 0 (compare pair-type 'high))		[pair-type high high (+ 3000 pair-high)]
+     )))
+
 
 ;; shuffled deck of 52 Card
 (defn deck-new []
@@ -50,7 +132,7 @@
 
 
 (defn print-help []
-  (println "no help")
+  (println "help message")
   )
 
 ;; return true if command was general 
@@ -71,14 +153,22 @@
 
 ;; 1 - 4
 (defn bot-count-parse [cmd txt]
-    4)
+  (let [ret 
+        (try
+          (Integer. txt)
+          (catch Exception e (println "Invalid input")))
+        ]
+    (cond
+     (not (identity ret)) (do (println "assuming max bot count") 5)
+     (or (< ret 1) (> ret 4)) (do (println "invalid count " ret " choosing 4 bots") 5)
+     true (+ 1 ret))))
 
 (defn player-name-parse [cmd txt]
   (str "[player] " txt))
 
 
 (defn lpop [lst]
-  [(first lst) 	(rest lst)]
+  [(first lst) (rest lst)]
   )
 
 (defn deck-hand [deck n]
@@ -89,17 +179,19 @@
 
 (defn deck-hands [deck n ret]
   (cond
-    (= n 0) [deck ret]
-    true (let [[h ndeck] (deck-hand deck +hand-count+)]
-           (deck-hands ndeck (- n 1) (cons h ret))
-           )))
-  
+   (= n 0) [deck ret]
+   true (let [[h ndeck] (deck-hand deck +hand-count+)]
+          (deck-hands ndeck (- n 1) (cons h ret))
+          )))
+
 (defn board-new []
   (println "New game")
-  (let [player-name (command "insert player name"
-                             player-name-parse)
-        player-count (command "insert bot count[1-4]"
-                              bot-count-parse)
+  (let [player-name
+        (command "insert player name"
+                 player-name-parse)
+        player-count
+        (command "insert bot count[1-4]"
+                 bot-count-parse)
         deck (deck-new)
         [d hnd] (deck-hands deck player-count nil)
         ]
@@ -127,11 +219,13 @@
         (println (str "[bot] " (:name p)))
         (println (:name p)))
       (hand-print (:hand p))
+      (let [[type high-pair high score] (hand-score (:hand p))]
+        (println type high)
+        )
       (println "")
       (score-print (rest hands)))))
 
 (defn game-win [board]
-  (println "game-win")
   (if (= (:rounds board) 1)
     (do
       (score-print (:hands board))
@@ -148,7 +242,7 @@
 (defn player-hand-print [board]
   (let [ph (hands-find-player (:hands board))]
     (hand-print (:hand ph))
-  (flush)))
+    (flush)))
 
 (defn drop-nth-help [cont removed n len ret0 ret1]
   (if (not cont)
@@ -168,7 +262,7 @@
   (if (not removed)
     [cont '()]
     (drop-nth-help cont removed 0 (count cont) '() '())))
-    
+
 
 (defn board-swap-cards [board vals]
   (let [[ncards deck-tmp] (deck-hand (:deck board) (count vals))
@@ -211,7 +305,7 @@
                  (do
                    (println "ERROR IN INPUT")
                    (hand-swap-ask board)))))))
-           
+
 
 
 ;; execute state
@@ -221,7 +315,7 @@
   (player-hand-print board)
   (cond
    (= (:rounds board) 0) (hand-swap-ask board)
-   ;(= (:round board) 1) 
+                                        ;(= (:round board) 1) 
    true nil
    ))
 
@@ -232,10 +326,9 @@
                (game-win b)
                b
                (board-new))]
-      (game (next-round board))))
+    (game (next-round board))))
 
 (defn -main
   [& args]
   (println "At any time you can type help to get help message or quit to exit the game")
   (game))
-
