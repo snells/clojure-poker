@@ -49,7 +49,7 @@ Jos halutaan olla tarkkoja niin myös Haskelissa tapahtuu sivuvaikutuksia koska 
 
 
 
-%esimerkki funktionaalisesta loopista
+%esimerkki funktionaalisesta loopista schemellä
 \begin{lstlisting}
 (let loop ((n 0))
    (cond
@@ -90,10 +90,19 @@ Muut Lisp-ohjelmoijat ovat usein kriittisiä Clojuren suhteen koska siinä käyt
 \section{Harjoitustyö}
 Tehtävänannossa mainittiin, että ohjelmakoodin tulisi olla idiomaattista valitulle ohjelmointikielelle.
 Emme ole täysin varmoja onko ohjelmakoodi täysin idiomaaattista mutta koska työn oli tarkoitus olla harjoitus funktionaaliseen paradigmaan,
-toteutimme koodin niin, että siinä ei muuteta muuttujia ollenkaan. 
-\subsection{Funktionaalisuudesta saadut hyödyt}
+toteutimme koodin niin, että siinä ei muuteta muuttujia ollenkaan.
+Valitsimme Clojuren ohjelmointikieleksi koska ML:n kaltaisissa ohjelmointikielissä on liian vaikea syntaksi.
 
-\subsection{Funktionaalisuuden haitat}
+\subsection{Funktionaalisuuden hyödyt ja haitat}
+Mielestämme ohjelmakoodin toteuttaminen funktionaalisesti oli vaikeampaa ja hitaampaa, kuin jos olisimme käyttäneet tavanomaisempaa
+paradigmaa. Jo pelkästään silmukkarakenteiden tekeminen vaati paljon enemmän miettimistä. 
+
+
+Pelitilaa ei ylläpidetä globaaleissa muuttujissa vaan se kulkee funktioiden parametreinä.
+Tämän takia funktioiden rakentaminen oli hieman puhtaanpaa koska mikään muu funktio ei voinut muuttaa tilaa joka oli saatu parametrinä.
+
+
+
 
 \bibliographystyle{abbrv}
 \bibliography{main}
