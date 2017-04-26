@@ -40,13 +40,13 @@
             (if (or 
                  (= 0 (compare first-suit 'spade))
                  (= 0 (compare first-suit 'club)))
-              ;; black
+              ;; black card
               (map (fn [card]
                      (or
                       (= 0 (compare (:suit card) 'spade))
                       (= 0 (compare (:suit card) 'club))))
                    hand)
-              ;; red
+              ;; red card
               (map (fn [card]
                      (or
                       (= 0 (compare (:suit card) 'heart))
@@ -57,7 +57,7 @@
 
 (defn hand-straight [hand]
   (let [values (sort (hand-values hand))
-        ;; funktion returns false if next card is not bigger by exacly 1
+        ;; function returns false if next card is not bigger by exacly 1
         tmpfn (fn recfn [lst previous]
                 (if (empty? lst)
                   true
@@ -167,15 +167,10 @@
   (str "[player] " txt))
 
 
-(defn lpop [lst]
-  [(first lst) (rest lst)]
-  )
-
+;; return one hand and rest of deck
 (defn deck-hand [deck n]
   [(take n deck)
    (drop n deck)])
-
-
 
 (defn deck-hands [deck n ret]
   (cond
@@ -183,6 +178,7 @@
    true (let [[h ndeck] (deck-hand deck +hand-count+)]
           (deck-hands ndeck (- n 1) (cons h ret))
           )))
+
 
 (defn board-new []
   (println "New game")
@@ -280,6 +276,8 @@
           hands)
      (+ 1 (:rounds board)))))
 
+
+;; cannot apply and because it's macro
 (defn and-fn [lst]
   (cond
    (empty? lst) true
