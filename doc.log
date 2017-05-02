@@ -1,14 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.7)  10 APR 2017 12:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.2)  2 MAY 2017 22:37
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**doc.tex
-(./doc.tex
-LaTeX2e <2016/03/31> patch level 3
-Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
-(/usr/share/texmf-dist/tex/latex/base/article.cls
+**./doc.tex
+(doc.tex
+LaTeX2e <2017-04-15>
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/size12.clo
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -23,20 +21,20 @@ File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/share/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -248,6 +246,8 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
    defining Unicode char U+1E02 (decimal 7682)
    defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
@@ -268,12 +268,14 @@ File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -313,8 +315,8 @@ File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -337,8 +339,8 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/share/texmf-dist/tex/latex/listings/listings.sty
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+(C:\Users\anajk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks16
 )
@@ -355,17 +357,18 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \lst@lineno=\count92
 \lst@maxwidth=\dimen106
 
-(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+(C:\Users\anajk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count93
 \lst@skipnumbers=\count94
 \lst@framebox=\box27
 )
-(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+(C:\Users\anajk\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
- (./doc.aux)
+
+(doc.aux)
 \openout1 = `doc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
@@ -387,76 +390,93 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 37.
 
 Overfull \hbox (2.25009pt too wide) in paragraph at lines 39--42
-\OT1/cmr/m/n/12 tiet^^?amyksemme pe-rus-teella pelin ohjel-moimi-nen on funk-ti
-on-aalis-esti vaikeam-
+\OT1/cmr/m/n/12 tietamyksemme pe-rus-teella pelin ohjel-moimi-nen on funk-tion
+-aalis-esti vaikeam-
  []
 
 
-Overfull \hbox (12.71204pt too wide) in paragraph at lines 44--49
-\OT1/cmr/m/n/12 Funktionaalinen paradigma on ohjel-moin-tiparadigma. Funk-tion-
-aalisen paradig-
+Overfull \hbox (0.814pt too wide) in paragraph at lines 39--42
+\OT1/cmr/m/n/12 Ohjel-moin-tityo an-taa meille myos tun-tu-maa miksi funk-tio
+n-aa-li-nen paradigma
  []
 
 
-Overfull \hbox (49.05377pt too wide) in paragraph at lines 44--49
-\OT1/cmr/m/n/12 man omainaisuuk-sia ovat es-imerkiksi muut-tumat-tomat ti-etora
-k-en-teet ja laiskalaskenta.
+Overfull \hbox (26.32439pt too wide) in paragraph at lines 44--45
+\OT1/cmr/m/n/12 okkaan ku-u-luva ohjel-moin-tiparadigma. Funk-tion-aalisen para
+dig-man omainaisuuk-
+ []
+
+
+Overfull \hbox (12.22453pt too wide) in paragraph at lines 44--45
+\OT1/cmr/m/n/12 sia ovat es-imerkiksi muut-tumat-tomat ti-etorak-en-teet ja lai
+ska laskenta. Laiskalla
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 61.
+{C:/Users/anajk/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 72.
 
-(/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 61.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 61.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
 
-(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
-
-Overfull \hbox (1.23622pt too wide) in paragraph at lines 80--81
-\OT1/cmr/m/n/12 Lispej^^?a pi-det^^?a^^?an yleens^^?a funk-tion-aal-isina mutta
- ne ovat todel-lisu-udessa moni-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+ [2]
+Overfull \hbox (4.01257pt too wide) in paragraph at lines 88--89
+\OT1/cmr/m/n/12 im-per-ati-ivisessa ohjel-moin-nissa, silla funk-tioilla ei ol
+e yhteista globaalia dataa,
  []
 
 
-Overfull \hbox (23.61746pt too wide) in paragraph at lines 80--81
-\OT1/cmr/m/n/12 m^^?a^^?aritt^^?av^^?at sivu-vaiku-tuk-sel-liset funk-tiot p^^?
-a^^?attyv^^?at aina hu-u-tomerkkiin. Schemen
+Overfull \hbox (1.23622pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/12 Lispeja pi-detaan yleensa funk-tion-aal-isina mutta ne ovat
+ todel-lisu-udessa moni-
  []
 
-[2]
-Overfull \hbox (10.1139pt too wide) in paragraph at lines 83--84
+
+Overfull \hbox (23.61746pt too wide) in paragraph at lines 93--94
+\OT1/cmr/m/n/12 maarittavat sivu-vaiku-tuk-sel-liset funk-tiot paattyvat
+ aina hu-u-tomerkkiin. Schemen
+ []
+
+[3]
+Overfull \hbox (10.1139pt too wide) in paragraph at lines 96--97
 \OT1/cmr/m/n/12 Clojure on ohjel-moin-tikieli, joka on saanut paljon vaikut-tei
-ta Com-mon Lispist^^?a.
+ta Com-mon Lispista.
+ []
+
+
+Overfull \hbox (17.78604pt too wide) in paragraph at lines 112--114
+\OT1/cmr/m/n/12 paa koska mikaan muu funk-tio ei voinut muut-taa tilaa joka o
+li saatu parametrina. 
  []
 
 No file doc.bbl.
-[3] (./doc.aux) ) 
+[4] (doc.aux) ) 
 Here is how much of TeX's memory you used:
- 2184 strings out of 494945
- 26482 string characters out of 6181446
- 79540 words of memory out of 5000000
- 5522 multiletter control sequences out of 15000+600000
- 6678 words of font info for 24 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 26i,7n,32p,795b,1219s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb>
-Output written on doc.pdf (3 pages, 61093 bytes).
+ 2189 strings out of 493328
+ 26724 string characters out of 3139125
+ 84327 words of memory out of 3000000
+ 5766 multiletter control sequences out of 15000+200000
+ 6678 words of font info for 24 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 26i,7n,32p,797b,1518s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
+12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on doc.pdf (4 pages, 67924 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 35 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

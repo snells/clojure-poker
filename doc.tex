@@ -1,7 +1,7 @@
 \title{Ohjelmointikielet ja -paradigmat 2017}
 \author{
   Sakari Sn\"all 507267 \\
-  Antti Vainikka
+  Antti Vainikka 510575
 \\
 }
 \date{\today}
@@ -38,11 +38,20 @@
 \section{Johdanto}
 Toteutimme harjoitustyön kolmannen tehtävän.
 Valitsimme toteutettavaksi peliksi pokerin koska järkevän toteutuksen tekeminen tutustuttaisi meidät kielen tapaan luoda struktuureita,
-lukea syötettä standardista syöteputkesta ja joutuisimme toteuttamaan pelijatkumon funktionaalisesti. Alkuperäisen tietämyksemme perusteella pelin ohjelmoiminen on funktionaalisesti vaikeampaa verrattuna imperatiiviseen tapaan ohjelmoida koska peleissä on tila, jota pitää muuttaa usein. Useat pelienohjelmointiin liittyvät kirjat käyttävät objektiorientoitunutta paradigmaa, joten ohjelmointityö antaa meille myös tuntumaa miksi funktionaalista paradigma ei ole suosittu ainakaan pelien ohjelmoinnissa.
+lukea syötettä standardista syöteputkesta ja joutuisimme toteuttamaan pelijatkumon funktionaalisesti. Alkuperäisen tietämyksemme perusteella pelin ohjelmoiminen on funktionaalisesti vaikeampaa verrattuna imperatiiviseen tapaan ohjelmoida koska peleissä on tila, jota pitää muuttaa usein. Useat pelienohjelmointiin liittyvät kirjat käyttävät olio-ohjelmoinnin paradigmaa, sillä pelin osat ovat yleensä helpompia hahmottaa kun ne jaetaan yksittäisiin olioihin, joilla on jokin tietty funktio. Ohjelmointityö antaa meille myös tuntumaa miksi funktionaalinen paradigma ei ole suosittu ainakaan pelien ohjelmoinnissa.
 
 \section{Funktionaalinen paradigma}
-Funktionaalinen paradigma on ohjelmointiparadigma. Funktionaalisen paradigman omainaisuuksia ovat esimerkiksi muuttumattomat tietorakenteet ja laiskalaskenta.
-On vaikea määrittää onko ohjelmoinkieli funktionaalinen vai ei. Useimmissa ohjelmointikielissä on olemassa mahdollisuus luoda anonyymejafunktioita ja sen pohjalta on vedetty johtopäätös, että kieli olisi funktionaalinen. Esimerkiksi Java8 kutsutaan funktionaaliseksi koska siihen lisättiin lyhenne paikallaan luodulle objektille, joka toteuttaa jonkin rajapinnan.
+Funktionaalinen paradigma on deklaratiivisten ohjelmointiparadigmojen luokkaan kuuluva ohjelmointiparadigma. Funktionaalisen paradigman omainaisuuksia ovat esimerkiksi muuttumattomat tietorakenteet ja laiska laskenta. Laiskalla laskennalla tarkoitetaan sitä, että mitään ei lasketa ennen kuin on pakko ja mitään ei lasketa kahdesti.
+
+\subsection{Matemaattinen lähtökohta}
+Funktionaalisessa ohjelmoinnissa pyritään kuvaamaan ongelma matemaattisesta näkökulmasta käyttäen funktioita ja lausekkeita. Funktiot pyritään pitämään tarkkaan määriteltyinä ja sivuvaikutuksettomina, eli sellaisina etteivät ne ole riippuvaisia globaalista datasta ja tuottavat aina saman lopputuloksen samoilla lähtöarvoilla.
+
+
+Funktionaalisen ohjelmoinnin matemaattisuus ilmenee myös siten, että funktioiden suoritusjärjestys ohjataan rekursioiden ja ehtojen avulla, kun taas imperatiivisessa ohjelmoinnissa ohjaus on peräkkäin ja iteratiivisesti. Funktionaalisilla ohjelmilla ei ole varsinaisesti tilaa kuten proseduraalisissa ohjelmissa, vaan niiden kontrollivuo muodostuu suoraan lausekkeista, funktiokutsuista ja niiden välisistä riippuvuuksista.
+
+
+\subsection{Funktionaaliset ohjelmointikielet}
+On vaikea määrittää onko ohjelmoinkieli funktionaalinen vai ei. Useimmissa ohjelmointikielissä on olemassa mahdollisuus luoda anonyymeja funktioita ja sen pohjalta on vedetty johtopäätös, että kieli olisi funktionaalinen. Esimerkiksi Java8 kutsutaan funktionaaliseksi koska siihen lisättiin lyhenne paikallaan luodulle objektille, joka toteuttaa jonkin rajapinnan.
 Funktionaaliset ohjelmointikielet voidaan jakaa kuitenkin puhtaasti funktionaalisiin ja epäpuhtaisiin. Puhtaus funktionaalisissa ohjelmointikielissä viittaa siihen voidaan kielessä toteuttaa sivuvaikutuksia. 
 Täysin funktionaalisia ohjelmointikieliä on esimerkiksi Haskell ja Clear. ML pohjaiset kielet ovat funktionaalisia mutta esimerkiksi standardissa ML:ssä ja Ocamlissa voidaan asettaa muuttujalle arvo.
 Jos halutaan olla tarkkoja niin myös Haskelissa tapahtuu sivuvaikutuksia koska esimerkiksi tekstin tulostaminen sisältää sivuvaikutuksen. Täydellisesti sivuvaikutuksellisessa ohjelmassa ei kuitenkaan ole järkeä koska tarpeeksi tehokas kääntäjä voisi tuottaa ohjelman, joka ei suorita mitään koska sivuvaikutuksia ei tehdä.
@@ -75,8 +84,10 @@ Listan ensimmäinen parametri voisi olla metodi ja loput metodin vaatimia parame
 \end{lstlisting}
 
 
-\subsection{Mahdolliset hyödyt}
-\subsection{Mahdolliset vaikeudet}
+\subsection{Mahdolliset vahvuudet}
+Funktionaalisen ohjelmoinnin suosio on ollut suuressa kasvussa, sillä prosessoriytimien määrä on kasvanut ja funktionaalisella ohjelmoinnilla ohjelmakoodia on helpompi rinnakkaistaa ja tehostaa. Kun funktioilla ei ole sivuvaikutuksia, on niiden suoritusjärjestys vapaa ja kääntäjä saa optimoitua samanlaiset funktiokutsut yhdeksi. Rinnakkaisuus on mutkattomampaa kuin imperatiivisessa ohjelmoinnissa, sillä funktioilla ei ole yhteistä globaalia dataa, joka voisi aiheuttaa ongelmia.
+\subsection{Mahdolliset heikkoudet}
+Funktionaalisessa ohjelmoinnissa yritetään välttää globaalia dataa, minkä takia ohjelmoidessa täytyy miettiä tarkemmin suoritusjärjestystä ja putkittaa kutsuja. Tosimaailman asioiden hahmottaminen voi olla vaikeampaa olioiden puuttumisen takia, mutta matemaattisten ongelmien ratkaisu on virtaviivaisempaa. Funktionaaliset ohjelmointikielet ovat usein raskaampia suorittaa kuin imperatiiviset, mikä johtuu monissa tapauksissa mutatoitumattomista muuttujista ja niiden tehottomuudesta nykytietokoneissa.
 
 \section{Lisp}
 Lispejä pidetään yleensä funktionaalisina mutta ne ovat todellisuudessa moniparadigmaisia. Common Lisp on tunnetuista Lispeistä tulkintamme mukaan vähiten funktionaalinen koska sen standardi ei edellytä häntärekursion optimointia. Common Lispissä on myös useita sivuvaikutuksellisia funktioita. Schemessä on myös sivuvaikutuksellisia funktioita mutta ainakin standardin määrittävät sivuvaikutukselliset funktiot päättyvät aina huutomerkkiin. Schemen standardi myös määrittää, että toteutuksen täytyy tukea häntärekursion optimointia. Schemen keskustelufoorumeilla myös kokemuksen perusteella suositaan enemmän rekursion käyttöä, toisin kuin Common Lispin ohjelmoijat, jotka tuntuvat hyödyntävän enemmän imperatiivisia silmukka-rakennetta.
