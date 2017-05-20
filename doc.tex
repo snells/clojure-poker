@@ -38,20 +38,21 @@
 \section{Johdanto}
 Toteutimme harjoitustyön kolmannen tehtävän.
 Valitsimme toteutettavaksi peliksi pokerin koska järkevän toteutuksen tekeminen tutustuttaisi meidät kielen tapaan luoda struktuureita,
-lukea syötettä standardista syöteputkesta ja joutuisimme toteuttamaan pelijatkumon funktionaalisesti. Alkuperäisen tietämyksemme perusteella pelin ohjelmoiminen on funktionaalisesti vaikeampaa verrattuna imperatiiviseen tapaan ohjelmoida koska peleissä on tila, jota pitää muuttaa usein. Useat pelienohjelmointiin liittyvät kirjat käyttävät olio-ohjelmoinnin paradigmaa, sillä pelin osat ovat yleensä helpompia hahmottaa kun ne jaetaan yksittäisiin olioihin, joilla on jokin tietty funktio. Ohjelmointityö antaa meille myös tuntumaa miksi funktionaalinen paradigma ei ole suosittu ainakaan pelien ohjelmoinnissa.
+lukea syötettä standardista syöteputkesta ja joutuisimme toteuttamaan pelijatkumon funktionaalisesti. Alkuperäisen tietämyksemme perusteella pelin ohjelmoiminen on funktionaalisesti vaikeampaa verrattuna imperatiiviseen tapaan ohjelmoida, koska peleissä on yleensä tila, jota pitää muuttaa usein. Useat peliohjelmointiin liittyvät kirjat ja artikkelit käyttävät olio-ohjelmoinnin paradigmaa, Pelien osat ovat yleensä helpompia hahmottaa kun ne jaetaan yksittäisiin olioihin, joilla on jokin tietty funktio. Ohjelmointityö antaa meille tuntumaa miksi funktionaalinen paradigma ei ole suosittu ainakaan pelien ohjelmoinnissa.
 
 \section{Funktionaalinen paradigma}
-Funktionaalinen paradigma on deklaratiivisten ohjelmointiparadigmojen luokkaan kuuluva ohjelmointiparadigma. Funktionaalisen paradigman omainaisuuksia ovat esimerkiksi muuttumattomat tietorakenteet ja laiska laskenta. Laiskalla laskennalla tarkoitetaan sitä, että mitään ei lasketa ennen kuin on pakko ja mitään ei lasketa kahdesti.
+Funktionaalinen paradigma on deklaratiivisten ohjelmointiparadigmojen luokkaan kuuluva ohjelmointiparadigma. Funktionaalisen paradigman omainaisuuksia ovat esimerkiksi muuttumattomat tietorakenteet ja laiska laskenta. Muuttumattomilla tietorakenteilla tarkoitetaan yleensä yksinkertaisuudessaan sitä, että mikäli halutaan esittää jokin asia muuttuneena, sille luodaan uusi tietorakenne (muuttuja tai funktio esimerkiksi). Laiskalla laskennalla puolestaan tarkoitetaan sitä, että mitään ei lasketa ennen kuin on pakko ja mitään ei lasketa kahdesti.
 
 \subsection{Matemaattinen lähtökohta}
-Funktionaalisessa ohjelmoinnissa pyritään kuvaamaan ongelma matemaattisesta näkökulmasta käyttäen funktioita ja lausekkeita. Funktiot pyritään pitämään tarkkaan määriteltyinä ja sivuvaikutuksettomina, eli sellaisina etteivät ne ole riippuvaisia globaalista datasta ja tuottavat aina saman lopputuloksen samoilla lähtöarvoilla.
+Funktionaalisessa ohjelmoinnissa pyritään kuvaamaan ongelma matemaattisesta näkökulmasta käyttäen funktioita ja lausekkeita. Funktiot pyritään pitämään tarkkaan määriteltyinä ja sivuvaikutuksettomina, eli sellaisina etteivät ne ole riippuvaisia globaalista datasta ja tuottavat aina saman lopputuloksen samoilla lähtöarvoilla.Funktionaalisessa ohjelmoinnissa tietorakenteet ovat usein listoja ja niiden yhdistelmiä.
 
 
-Funktionaalisen ohjelmoinnin matemaattisuus ilmenee myös siten, että funktioiden suoritusjärjestys ohjataan rekursioiden ja ehtojen avulla, kun taas imperatiivisessa ohjelmoinnissa ohjaus on peräkkäin ja iteratiivisesti. Funktionaalisilla ohjelmilla ei ole varsinaisesti tilaa kuten proseduraalisissa ohjelmissa, vaan niiden kontrollivuo muodostuu suoraan lausekkeista, funktiokutsuista ja niiden välisistä riippuvuuksista.
+\subsection{Kontrollivuo}
+Funktionaalisen ohjelmoinnin matemaattisuus ilmenee myös siten, että funktioiden suoritusjärjestys ohjataan rekursioiden ja peräkkäisten funktioiden avulla, kun taas imperatiivisessa ohjelmoinnissa ohjaus toimii ehtolauseilla ja iteraatioillai. Funktionaalisilla ohjelmilla ei ole varsinaisesti tilaa kuten proseduraalisissa ohjelmissa, vaan niiden kontrollivuo muodostuu suoraan lausekkeista, funktiokutsuista ja niiden välisistä riippuvuuksista. Koska funktionaalisessa ohjelmoinnissa ei ole monimutkaisia ehtolauseita vaan ohjaus tapahtuu peräkkäisillä funktion kutsuilla on ohjelman toiminta helpommin ennustettavissa.
 
 
 \subsection{Funktionaaliset ohjelmointikielet}
-On vaikea määrittää onko ohjelmoinkieli funktionaalinen vai ei. Useimmissa ohjelmointikielissä on olemassa mahdollisuus luoda anonyymeja funktioita ja sen pohjalta on vedetty johtopäätös, että kieli olisi funktionaalinen. Esimerkiksi Java8 kutsutaan funktionaaliseksi koska siihen lisättiin lyhenne paikallaan luodulle objektille, joka toteuttaa jonkin rajapinnan.
+On vaikea määrittää onko ohjelmoinkieli funktionaalinen vai ei. Useimmissa ohjelmointikielissä on olemassa mahdollisuus luoda anonyymeja funktioita ja sen pohjalta on vedetty johtopäätös, että kieli olisi funktionaalinen. Esimerkiksi Java 8:aa kutsutaan funktionaaliseksi, koska siihen lisättiin lyhenne paikallaan luodulle objektille, joka toteuttaa jonkin rajapinnan.
 Funktionaaliset ohjelmointikielet voidaan jakaa kuitenkin puhtaasti funktionaalisiin ja epäpuhtaisiin. Puhtaus funktionaalisissa ohjelmointikielissä viittaa siihen voidaan kielessä toteuttaa sivuvaikutuksia. 
 Täysin funktionaalisia ohjelmointikieliä on esimerkiksi Haskell ja Clear. ML pohjaiset kielet ovat funktionaalisia mutta esimerkiksi standardissa ML:ssä ja Ocamlissa voidaan asettaa muuttujalle arvo.
 Jos halutaan olla tarkkoja niin myös Haskelissa tapahtuu sivuvaikutuksia koska esimerkiksi tekstin tulostaminen sisältää sivuvaikutuksen. Täydellisesti sivuvaikutuksellisessa ohjelmassa ei kuitenkaan ole järkeä koska tarpeeksi tehokas kääntäjä voisi tuottaa ohjelman, joka ei suorita mitään koska sivuvaikutuksia ei tehdä.
@@ -76,7 +77,7 @@ for(int n = 0; n < 10; n++) {
 
 
 \subsection{Sulkeumat objektien sijaan}
-Ohjelmointikielissä joissa funktioon voidaan sisällyttää ympäristö(closure), pystytään triviaalisti toteuttamaan objektisysteemi.
+Ohjelmointikielissä joissa funktioon voidaan sisällyttää ympäristö (closure), pystytään triviaalisti toteuttamaan objektisysteemi.
 Yksi mahdollinen tapa toteuttaa objektisysteemi olisi tehdä objektin luova funktio, joka palauttaisi funktion, joka ottaa listan parametreja.
 Listan ensimmäinen parametri voisi olla metodi ja loput metodin vaatimia parametreja.
 \begin{lstlisting}
