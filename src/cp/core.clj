@@ -33,25 +33,15 @@
   (map (fn [card] (:value card)) hand))
 
 
-(defn hand-same-color [hand]
-  (let [first-suit (:suit (first hand))]
-    ;; turn hand into list of booleans of either black or red
-    (every? identity 
-            (if (or 
-                 (= 0 (compare first-suit 'spade))
-                 (= 0 (compare first-suit 'club)))
-              ;; black card
-              (map (fn [card]
-                     (or
-                      (= 0 (compare (:suit card) 'spade))
-                      (= 0 (compare (:suit card) 'club))))
-                   hand)
-              ;; red card
-              (map (fn [card]
-                     (or
-                      (= 0 (compare (:suit card) 'heart))
-                      (= 0 (compare (:suit card) 'diamond))))
-                   hand)))))
+;; returns true if every card has same suit
+(defn hand-same-color [hand type]
+  (if (empty? hand)
+    true
+    (if (= 0 (compare
+              (:suit (first hand))
+              type))
+      (hand-same-color (rest hand) type)
+      false)))
 
 
 
@@ -96,7 +86,7 @@
 
 ;; hand list of cards
 (defn hand-score [hand]
-  (let [same-color (hand-same-color hand)
+  (let [same-color (hand-same-color hand (:suit (first hand)))
         straight (hand-straight hand)
         [pair-type pair-high] (hand-equal-count hand)
         high (apply max (hand-values hand))
@@ -112,7 +102,7 @@
      (= 0 (compare pair-type 'three))		[pair-type pair-high high (+ 6000 pair-high)] 
      (= 0 (compare pair-type 'doublepair))	[pair-type pair-high high (+ 5000 pair-high)] 
      (= 0 (compare pair-type 'pair))		[pair-type pair-high high (+ 4000 pair-high)]
-     (= 0 (compare pair-type 'high))		[pair-type high high (+ 3000 pair-high)]
+     (= 0 (compare pair-type 'high))		[pair-type high high (+ 3000 high)]
      )))
 
 
@@ -216,7 +206,7 @@
         (println (:name p)))
       (hand-print (:hand p))
       (let [[type high-pair high score] (hand-score (:hand p))]
-        (println type high)
+        (println type high-pair "\tscore:\t" score)
         )
       (println "")
       (score-print (rest hands)))))
