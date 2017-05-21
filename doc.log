@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.1.25)  20 MAY 2017 16:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.1.25)  21 MAY 2017 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -365,123 +365,239 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
- (./doc.aux)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count95
+))
+\Gin@req@height=\dimen107
+\Gin@req@width=\dimen108
+) (./doc.aux)
 \openout1 = `doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-\c@lstlisting=\count95
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 37.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+\c@lstlisting=\count96
 
-Overfull \hbox (2.25009pt too wide) in paragraph at lines 39--42
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count97
+\scratchdimen=\dimen109
+\scratchbox=\box28
+\nofMPsegments=\count98
+\nofMParguments=\count99
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count100
+\MPscratchDim=\dimen110
+\MPnumerator=\count101
+\makeMPintoPDFobject=\count102
+\everyMPtoPDFconversion=\toks19
+) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 38.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 38.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (2.25009pt too wide) in paragraph at lines 43--46
 \OT1/cmr/m/n/12 tiet^^?amyksemme pe-rus-teella pelin ohjel-moimi-nen on funk-ti
 on-aalis-esti vaikeam-
  []
 
-
-Overfull \hbox (26.32439pt too wide) in paragraph at lines 44--45
+[2]
+Overfull \hbox (26.32439pt too wide) in paragraph at lines 49--50
 \OT1/cmr/m/n/12 okkaan ku-u-luva ohjel-moin-tiparadigma. Funk-tion-aalisen para
 dig-man omainaisuuk-
  []
 
 
-Overfull \hbox (1.40149pt too wide) in paragraph at lines 44--45
+Overfull \hbox (1.40149pt too wide) in paragraph at lines 49--50
 \OT1/cmr/m/n/12 tumat-tomilla ti-etorak-en-teilla tarkoite-taan yleens^^?a yksi
 nker-taisu-udessaan sit^^?a,
  []
 
 
-Overfull \hbox (8.56902pt too wide) in paragraph at lines 44--45
+Overfull \hbox (8.56902pt too wide) in paragraph at lines 49--50
 \OT1/cmr/m/n/12 etorakenne (muut-tuja tai funk-tio es-imerkiksi). Laiskalla las
 ken-nalla puolestaan
  []
 
-[1
+<puhdasfunktio.png, id=13, 602.25pt x 333.245pt>
+File: puhdasfunktio.png Graphic file (type png)
+ <use puhdasfunktio.png>
+Package pdftex.def Info: puhdasfunktio.png used on input line 54.
+(pdftex.def)             Requested size: 390.0pt x 215.80833pt.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (1.0927pt too wide) in paragraph at lines 51--52
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 54--55
+[][] 
+ []
+
+
+Overfull \hbox (1.0927pt too wide) in paragraph at lines 58--59
 \OT1/cmr/m/n/12 lausekkeista, funk-tiokut-su-ista ja ni-iden v^^?alisist^^?a ri
 -ip-pu-vuuk-sista. Koska funk-
  []
 
-[2]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 73.
- (/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
+[3 <./puhdasfunktio.png (PNG copy)>]
+Overfull \hbox (0.68344pt too wide) in paragraph at lines 62--66
+\OT1/cmr/m/n/12 tuu sivu-vaiku-tuk-sia koska es-imerkiksi tek-stin tu-lostami-n
+en sis^^?alt^^?a^^?a sivu-vaiku-
+ []
+
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 80.
+(/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 73.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 80.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 80.
 
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
-
-Overfull \hbox (4.01257pt too wide) in paragraph at lines 89--90
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
+ [4]
+Overfull \hbox (4.01257pt too wide) in paragraph at lines 96--97
 \OT1/cmr/m/n/12 im-per-ati-ivisessa ohjel-moin-nissa, sill^^?a funk-tioilla ei 
 ole yhteist^^?a globaalia dataa,
  []
 
-
-Overfull \hbox (1.23622pt too wide) in paragraph at lines 94--95
+[5]
+Overfull \hbox (1.23622pt too wide) in paragraph at lines 103--104
 \OT1/cmr/m/n/12 Lispej^^?a pi-det^^?a^^?an yleens^^?a funk-tion-aal-isina mutta
  ne ovat todel-lisu-udessa moni-
  []
 
 
-Overfull \hbox (23.61746pt too wide) in paragraph at lines 94--95
+Overfull \hbox (23.61746pt too wide) in paragraph at lines 103--104
 \OT1/cmr/m/n/12 m^^?a^^?aritt^^?av^^?at sivu-vaiku-tuk-sel-liset funk-tiot p^^?
 a^^?attyv^^?at aina hu-u-tomerkkiin. Schemen
  []
 
-[3]
-Overfull \hbox (10.1139pt too wide) in paragraph at lines 97--98
+
+Overfull \hbox (10.1139pt too wide) in paragraph at lines 106--107
 \OT1/cmr/m/n/12 Clojure on ohjel-moin-tikieli, joka on saanut paljon vaikut-tei
 ta Com-mon Lispist^^?a.
  []
 
-[4]
-Overfull \hbox (17.78604pt too wide) in paragraph at lines 113--115
+<sulkeet.png, id=26, 803.0pt x 370.38374pt>
+File: sulkeet.png Graphic file (type png)
+ <use sulkeet.png>
+Package pdftex.def Info: sulkeet.png used on input line 110.
+(pdftex.def)             Requested size: 390.0pt x 179.89021pt.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 110--111
+[][] 
+ []
+
+[6 <./sulkeet.png>] [7]
+Overfull \hbox (17.78604pt too wide) in paragraph at lines 127--129
 \OT1/cmr/m/n/12 paa koska mik^^?a^^?an muu funk-tio ei voinut muut-taa tilaa jo
 ka oli saatu parametrin^^?a. 
  []
 
 No file doc.bbl.
-[5] (./doc.aux) ) 
+[8] (./doc.aux) ) 
 Here is how much of TeX's memory you used:
- 2184 strings out of 493013
- 26493 string characters out of 6139317
- 84441 words of memory out of 5000000
- 5771 multiletter control sequences out of 15000+600000
+ 3426 strings out of 493013
+ 44760 string characters out of 6139317
+ 109100 words of memory out of 5000000
+ 6950 multiletter control sequences out of 15000+600000
  6678 words of font info for 24 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 26i,7n,32p,795b,1512s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,7n,32p,795b,1219s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/vaintti/.texlive/texmf-var/fonts/pk/ljfour/public/cm/c
 msy10.720pk> </home/vaintti/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmmi12
 .600pk> </home/vaintti/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.720p
-k> </usr/share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/vai
-ntti/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.864pk> </home/vaintti/
+k> </home/vaintti/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmbx12.864pk> </
+usr/share/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/vaintti/
 .texlive/texmf-var/fonts/pk/ljfour/public/cm/cmr12.720pk> </home/vaintti/.texli
 ve/texmf-var/fonts/pk/ljfour/public/cm/cmr17.720pk>
-Output written on doc.pdf (5 pages, 59425 bytes).
+Output written on doc.pdf (8 pages, 278743 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
+ 223 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

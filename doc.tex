@@ -10,6 +10,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
+\usepackage{graphicx}
 %\usepackage{listings,mdframed,xcolor}
 \begin{document}
 
@@ -35,16 +36,22 @@
 %}
 
 \maketitle
+
+\newpage
+
 \section{Johdanto}
 Toteutimme harjoitustyön kolmannen tehtävän.
 Valitsimme toteutettavaksi peliksi pokerin koska järkevän toteutuksen tekeminen tutustuttaisi meidät kielen tapaan luoda struktuureita,
 lukea syötettä standardista syöteputkesta ja joutuisimme toteuttamaan pelijatkumon funktionaalisesti. Alkuperäisen tietämyksemme perusteella pelin ohjelmoiminen on funktionaalisesti vaikeampaa verrattuna imperatiiviseen tapaan ohjelmoida, koska peleissä on yleensä tila, jota pitää muuttaa usein. Useat peliohjelmointiin liittyvät kirjat ja artikkelit käyttävät olio-ohjelmoinnin paradigmaa, Pelien osat ovat yleensä helpompia hahmottaa kun ne jaetaan yksittäisiin olioihin, joilla on jokin tietty funktio. Ohjelmointityö antaa meille tuntumaa miksi funktionaalinen paradigma ei ole suosittu ainakaan pelien ohjelmoinnissa.
 
+\newpage
 \section{Funktionaalinen paradigma}
 Funktionaalinen paradigma on deklaratiivisten ohjelmointiparadigmojen luokkaan kuuluva ohjelmointiparadigma. Funktionaalisen paradigman omainaisuuksia ovat esimerkiksi muuttumattomat tietorakenteet ja laiska laskenta. Muuttumattomilla tietorakenteilla tarkoitetaan yleensä yksinkertaisuudessaan sitä, että mikäli halutaan esittää jokin asia muuttuneena, sille luodaan uusi tietorakenne (muuttuja tai funktio esimerkiksi). Laiskalla laskennalla puolestaan tarkoitetaan sitä, että mitään ei lasketa ennen kuin on pakko ja mitään ei lasketa kahdesti.
 
 \subsection{Matemaattinen lähtökohta}
-Funktionaalisessa ohjelmoinnissa pyritään kuvaamaan ongelma matemaattisesta näkökulmasta käyttäen funktioita ja lausekkeita. Funktiot pyritään pitämään tarkkaan määriteltyinä ja sivuvaikutuksettomina, eli sellaisina etteivät ne ole riippuvaisia globaalista datasta ja tuottavat aina saman lopputuloksen samoilla lähtöarvoilla.Funktionaalisessa ohjelmoinnissa tietorakenteet ovat usein listoja ja niiden yhdistelmiä.
+Funktionaalisessa ohjelmoinnissa pyritään kuvaamaan ongelma matemaattisesta näkökulmasta käyttäen funktioita ja lausekkeita. Tietorakenteet ovat usein listoja ja niiden yhdistelmiä. Funktiot pyritään pitämään tarkkaan määriteltyinä ja sivuvaikutuksettomina, eli sellaisina etteivät ne ole riippuvaisia globaalista datasta ja tuottavat aina saman lopputuloksen samoilla lähtöarvoilla.
+
+\includegraphics[width=\textwidth]{puhdasfunktio.png}
 
 
 \subsection{Kontrollivuo}
@@ -53,7 +60,7 @@ Funktionaalisen ohjelmoinnin matemaattisuus ilmenee myös siten, että funktioid
 
 \subsection{Funktionaaliset ohjelmointikielet}
 On vaikea määrittää onko ohjelmoinkieli funktionaalinen vai ei. Useimmissa ohjelmointikielissä on olemassa mahdollisuus luoda anonyymeja funktioita ja sen pohjalta on vedetty johtopäätös, että kieli olisi funktionaalinen. Esimerkiksi Java 8:aa kutsutaan funktionaaliseksi, koska siihen lisättiin lyhenne paikallaan luodulle objektille, joka toteuttaa jonkin rajapinnan.
-Funktionaaliset ohjelmointikielet voidaan jakaa kuitenkin puhtaasti funktionaalisiin ja epäpuhtaisiin. Puhtaus funktionaalisissa ohjelmointikielissä viittaa siihen voidaan kielessä toteuttaa sivuvaikutuksia. 
+Funktionaaliset ohjelmointikielet voidaan jakaa kuitenkin puhtaasti funktionaalisiin ja epäpuhtaisiin. Puhtaus funktionaalisissa ohjelmointikielissä viittaa siihen voidaanko kielessä aiheuttaa sivuvaikutuksia. 
 Täysin funktionaalisia ohjelmointikieliä on esimerkiksi Haskell ja Clear. ML pohjaiset kielet ovat funktionaalisia mutta esimerkiksi standardissa ML:ssä ja Ocamlissa voidaan asettaa muuttujalle arvo.
 Jos halutaan olla tarkkoja niin myös Haskelissa tapahtuu sivuvaikutuksia koska esimerkiksi tekstin tulostaminen sisältää sivuvaikutuksen. Täydellisesti sivuvaikutuksellisessa ohjelmassa ei kuitenkaan ole järkeä koska tarpeeksi tehokas kääntäjä voisi tuottaa ohjelman, joka ei suorita mitään koska sivuvaikutuksia ei tehdä.
 
@@ -87,9 +94,11 @@ Listan ensimmäinen parametri voisi olla metodi ja loput metodin vaatimia parame
 
 \subsection{Mahdolliset vahvuudet}
 Funktionaalisen ohjelmoinnin suosio on ollut suuressa kasvussa, sillä prosessoriytimien määrä on kasvanut ja funktionaalisella ohjelmoinnilla ohjelmakoodia on helpompi rinnakkaistaa ja tehostaa. Kun funktioilla ei ole sivuvaikutuksia, on niiden suoritusjärjestys vapaa ja kääntäjä saa optimoitua samanlaiset funktiokutsut yhdeksi. Rinnakkaisuus on mutkattomampaa kuin imperatiivisessa ohjelmoinnissa, sillä funktioilla ei ole yhteistä globaalia dataa, joka voisi aiheuttaa ongelmia.
+
 \subsection{Mahdolliset heikkoudet}
 Funktionaalisessa ohjelmoinnissa yritetään välttää globaalia dataa, minkä takia ohjelmoidessa täytyy miettiä tarkemmin suoritusjärjestystä ja putkittaa kutsuja. Tosimaailman asioiden hahmottaminen voi olla vaikeampaa olioiden puuttumisen takia, mutta matemaattisten ongelmien ratkaisu on virtaviivaisempaa. Funktionaaliset ohjelmointikielet ovat usein raskaampia suorittaa kuin imperatiiviset, mikä johtuu monissa tapauksissa mutatoitumattomista muuttujista ja niiden tehottomuudesta nykytietokoneissa.
 
+\newpage
 \section{Lisp}
 Lispejä pidetään yleensä funktionaalisina mutta ne ovat todellisuudessa moniparadigmaisia. Common Lisp on tunnetuista Lispeistä tulkintamme mukaan vähiten funktionaalinen koska sen standardi ei edellytä häntärekursion optimointia. Common Lispissä on myös useita sivuvaikutuksellisia funktioita. Schemessä on myös sivuvaikutuksellisia funktioita mutta ainakin standardin määrittävät sivuvaikutukselliset funktiot päättyvät aina huutomerkkiin. Schemen standardi myös määrittää, että toteutuksen täytyy tukea häntärekursion optimointia. Schemen keskustelufoorumeilla myös kokemuksen perusteella suositaan enemmän rekursion käyttöä, toisin kuin Common Lispin ohjelmoijat, jotka tuntuvat hyödyntävän enemmän imperatiivisia silmukka-rakennetta.
 
@@ -97,8 +106,13 @@ Lispejä pidetään yleensä funktionaalisina mutta ne ovat todellisuudessa moni
 Clojure on ohjelmointikieli, joka on saanut paljon vaikutteita Common Lispistä. Clojure ei vältämättä tue häntärekursion optimointia. Clojure kuitenkin eroaa Schemestä ja Common Lispistä siinä, että Clojuressa perus datarakenteet ovat muuttumattomia. 
 
 Muut Lisp-ohjelmoijat ovat usein kriittisiä Clojuren suhteen koska siinä käytetään kaikkia eri tyyppisiä sulkeita pelkkien tavallisten sulkeiden sijaan.
-\subsection{Funktionaalinen Clojure}
 
+\includegraphics[width=\textwidth]{sulkeet.png}
+
+\subsection{Funktionaalinen Clojure}
+Clojure pyrkii olemaan funktionaalinen ohjelmointikieli, mutta epäpuhdas sellainen, sillä se ei pakota tekemään sovelluksista läpinäkyviä eikä todistettavissa olevia. Clojurella tehtyjä funktioita ei siis aina voida korvata arvoilla muuttamatta sovelluksen käyttäytymistä. Clojure sisältää myös laajan valikoiman mutatoitumattomia tietorakenteita (listoja, vektoreita, avain-arvo pareja).
+
+\newpage
 \section{Harjoitustyö}
 Tehtävänannossa mainittiin, että ohjelmakoodin tulisi olla idiomaattista valitulle ohjelmointikielelle.
 Emme ole täysin varmoja onko ohjelmakoodi täysin idiomaaattista mutta koska työn oli tarkoitus olla harjoitus funktionaaliseen paradigmaan,
@@ -111,7 +125,7 @@ paradigmaa. Jo pelkästään silmukkarakenteiden tekeminen vaati paljon enemmän
 
 
 Pelitilaa ei ylläpidetä globaaleissa muuttujissa vaan se kulkee funktioiden parametreinä.
-Tämän takia funktioiden rakentaminen oli hieman puhtaanpaa koska mikään muu funktio ei voinut muuttaa tilaa joka oli saatu parametrinä.
+Tämän takia funktioiden rakentaminen oli hieman puhtaampaa koska mikään muu funktio ei voinut muuttaa tilaa joka oli saatu parametrinä.
 
 
 
