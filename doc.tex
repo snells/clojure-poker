@@ -42,7 +42,7 @@
 \section{Johdanto}
 Toteutimme harjoitustyön kolmannen tehtävän.
 Valitsimme toteutettavaksi peliksi pokerin koska järkevän toteutuksen tekeminen tutustuttaisi meidät kielen tapaan luoda struktuureita,
-lukea syötettä standardista syöteputkesta ja joutuisimme toteuttamaan pelijatkumon funktionaalisesti. Alkuperäisen tietämyksemme perusteella pelin ohjelmoiminen on funktionaalisesti vaikeampaa verrattuna imperatiiviseen tapaan ohjelmoida, koska peleissä on yleensä tila, jota pitää muuttaa usein. Useat peliohjelmointiin liittyvät kirjat ja artikkelit käyttävät olio-ohjelmoinnin paradigmaa, Pelien osat ovat yleensä helpompia hahmottaa kun ne jaetaan yksittäisiin olioihin, joilla on jokin tietty funktio. Ohjelmointityö antaa meille tuntumaa miksi funktionaalinen paradigma ei ole suosittu ainakaan pelien ohjelmoinnissa.
+lukea syötettä standardista syöteputkesta ja joutuisimme toteuttamaan pelijatkumon funktionaalisesti. Alkuperäisen tietämyksemme perusteella pelin ohjelmoiminen on funktionaalisesti vaikeampaa verrattuna imperatiiviseen tapaan ohjelmoida, koska peleissä on yleensä tila, jota pitää muuttaa usein. Useat peliohjelmointiin liittyvät kirjat ja artikkelit käyttävät olio-ohjelmoinnin paradigmaa. Pelien osat ovat yleensä helpompia hahmottaa kun ne jaetaan yksittäisiin olioihin, joilla on jokin tietty funktio. Ohjelmointityö antaa meille tuntumaa miksi funktionaalinen paradigma ei ole suosittu ainakaan pelien ohjelmoinnissa.
 
 \newpage
 \section{Funktionaalinen paradigma}
@@ -84,13 +84,18 @@ for(int n = 0; n < 10; n++) {
 
 
 \subsection{Sulkeumat objektien sijaan}
-Ohjelmointikielissä joissa funktioon voidaan sisällyttää ympäristö (closure), pystytään triviaalisti toteuttamaan objektisysteemi.
+Yleensä funktionaaliset ohjelmointikielet tukevat sulkeumia(closure).
+Sulkeumissa funktion kantaa mukanaan sen hetkistä ympäristöä, jossa se luotiin.
+Lisp-kielissä tätä voidaan kutsua ``let over lambda''.
+Alla olevassa ohjelmakoodissa let-rakenne palauttaa funktion ja vain kyseinen funktio voi käsitellä x-muuttujaa.
+\begin{lstlisting}
+(let ((x 1))
+  (lambda ()
+    (display x)))
+\end{lstlisting}
+Sulkeumilla voitaisiin toteuttaa objektisysteemi.
 Yksi mahdollinen tapa toteuttaa objektisysteemi olisi tehdä objektin luova funktio, joka palauttaisi funktion, joka ottaa listan parametreja.
 Listan ensimmäinen parametri voisi olla metodi ja loput metodin vaatimia parametreja.
-\begin{lstlisting}
-
-\end{lstlisting}
-
 
 \subsection{Mahdolliset vahvuudet}
 Funktionaalisen ohjelmoinnin suosio on ollut suuressa kasvussa, sillä prosessoriytimien määrä on kasvanut ja funktionaalisella ohjelmoinnilla ohjelmakoodia on helpompi rinnakkaistaa ja tehostaa. Kun funktioilla ei ole sivuvaikutuksia, on niiden suoritusjärjestys vapaa ja kääntäjä saa optimoitua samanlaiset funktiokutsut yhdeksi. Rinnakkaisuus on mutkattomampaa kuin imperatiivisessa ohjelmoinnissa, sillä funktioilla ei ole yhteistä globaalia dataa, joka voisi aiheuttaa ongelmia.
@@ -105,6 +110,7 @@ Lispejä pidetään yleensä funktionaalisina mutta ne ovat todellisuudessa moni
 \subsection{Clojure}
 Clojure on ohjelmointikieli, joka on saanut paljon vaikutteita Common Lispistä. Clojure ei vältämättä tue häntärekursion optimointia. Clojure kuitenkin eroaa Schemestä ja Common Lispistä siinä, että Clojuressa perus datarakenteet ovat muuttumattomia. 
 
+
 Muut Lisp-ohjelmoijat ovat usein kriittisiä Clojuren suhteen koska siinä käytetään kaikkia eri tyyppisiä sulkeita pelkkien tavallisten sulkeiden sijaan.
 
 \includegraphics[width=\textwidth]{sulkeet.png}
@@ -116,16 +122,62 @@ Clojure pyrkii olemaan funktionaalinen ohjelmointikieli, mutta epäpuhdas sellai
 \section{Harjoitustyö}
 Tehtävänannossa mainittiin, että ohjelmakoodin tulisi olla idiomaattista valitulle ohjelmointikielelle.
 Emme ole täysin varmoja onko ohjelmakoodi täysin idiomaaattista mutta koska työn oli tarkoitus olla harjoitus funktionaaliseen paradigmaan,
-toteutimme koodin niin, että siinä ei muuteta muuttujia ollenkaan.
-Valitsimme Clojuren ohjelmointikieleksi koska ML:n kaltaisissa ohjelmointikielissä on liian vaikea syntaksi.
+toteutimme koodin niin, että siinä ei muuteta muuttujia ollenkaan. Myös kaikki silmukkarakenteet on toteutettu rekursiivisesti.
+Mietimme pitäisikö harjoitustyö toteuttaa jollain ML-suvun kielistä. ML-suvun kielissä tuntuu olevan voimakas tyyppisysteemi, joka Clojuresta puuttuu. Valitsimme kuitenkin Clojuren ohjelmointikieleksi koska ML:n kaltaisissa ohjelmointikielissä on liian vaikea syntaksi. Alhaalla on pätkä ATS-kieltä.
+
+\begin{lstlisting}
+fun{
+a:t@ype
+} list_length
+  {n:nat} .<n>.
+\end{lstlisting}
 
 \subsection{Funktionaalisuuden hyödyt ja haitat}
 Mielestämme ohjelmakoodin toteuttaminen funktionaalisesti oli vaikeampaa ja hitaampaa, kuin jos olisimme käyttäneet tavanomaisempaa
 paradigmaa. Jo pelkästään silmukkarakenteiden tekeminen vaati paljon enemmän miettimistä. 
 
 
+Pokerimme on niin yksinkertainen, että tehokkuuden kannalta ohjelmointikielen valinnalla ei ole väliä.
+Ajatus isomman projektin toteuttamisesta Clojurella kuitenkin hirvittää. Clojurella ohjelmoitaessa jo yksinkertaisissa rakenteissa tulee luotua paljon uusia objekteja. Samanlainen rakenne esimerkiksi C-kielellä ei välttämättä allokoisi mitään.
+Todellinen suoritusnopeus riippuu tietenkin siitä, millaista tavukoodia kääntäjä luo.
+
+\newpage
+\begin{lstlisting}
+(let [
+     lst '(1 2 3 4)
+     sorted (sort lst) ;; new list
+     rev (reverse sorted) ;; again create new list 
+     ]
+     rev)
+\end{lstlisting}
+
+\begin{lstlisting}
+int lst[4];
+// modify array in place
+int_list_sort(lst, 4); 
+// modify array in place, no extra allocations
+int_list_reverse(lst, 4); 
+\end{lstlisting}
+
+
+
 Pelitilaa ei ylläpidetä globaaleissa muuttujissa vaan se kulkee funktioiden parametreinä.
-Tämän takia funktioiden rakentaminen oli hieman puhtaampaa koska mikään muu funktio ei voinut muuttaa tilaa joka oli saatu parametrinä.
+Tämän takia funktioiden rakentaminen oli puhdasta koska mikään muu funktio ei voinut muuttaa tilaa joka oli saatu parametrinä.
+Tilan säilyttäminen parametreissä ei ole mahdollista ainoastaan funktionaalisessa paradigmassa ohjelmoida
+mutta Clojurella ohjelmoidessa ohjelman rakennu muotoutui sellaiseksi luonnollisesti.
+Mielestäni ohjelmatilan säilyttäminen funktioiden parametreissä voisi olla myös hyödyllistä C-kieltä ohjelmoidessa.
+
+\begin{lstlisting}
+int main(void)
+{
+        State *state = state_new();
+        while(state_next_continue(state))
+                state_process(state);
+
+        return 0;
+}
+\end{lstlisting}
+
 
 
 
